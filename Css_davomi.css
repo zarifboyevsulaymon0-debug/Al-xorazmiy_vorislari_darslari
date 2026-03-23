@@ -1,0 +1,55 @@
+body {
+    background-color: rgb(55, 54, 54);
+    padding: 465px 25px;
+    background-repeat: no-repeat;
+    background-image: url("https://jutagrass.com.ua/wp-content/uploads/2019/09/futbolnoe-pole-razmeryi-i-razmetka-standartyi-fifa-2019-2-418x315.jpg");
+    margin: 30;
+    background-size: cover; 
+}
+.div1 {
+    border: 2px solid rgb(214, 236, 49);
+    padding: 465px 25px;
+    text-align: center;
+    margin: 30px;
+    
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.div2 {
+    border: 2px solid rgb(169, 216, 38);
+    padding: 400px 400px;
+    text-align: center;
+    display: inline-block;
+    margin: 330px;
+     background-image: url("https://upload.wikimedia.org/wikipedia/uz/thumb/5/56/Real_Madrid_CF.svg/250px-Real_Madrid_CF.svg.png");
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+.div3 {
+    border: 2px solid rgb(169, 216, 38);
+    padding: 265px 25px;
+    text-align: center;
+    margin: 30px;
+     background-image: url("https://assets.realmadrid.com/is/image/realmadrid/MBAPPE_550x650_SinParche?$Mobile$&fit=wrap&wid=420");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div4 {
+    border: 2px solid rgb(169, 216, 38);
+    padding: 265px 25px;
+    text-align: center;
+    margin: 30px;
+     background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.div5 {
+    border: 2px solid rgb(169, 216, 38);
+    padding: 265px 25px;
+    text-align: center;
+    margin: 30px;
+     background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
