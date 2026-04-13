@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Portfoliom</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Uch nuqta tugmasi */
+        .menu-dots {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -50px auto 50px;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            display: block;
+            margin: 50px auto 20px;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        h1 { margin-bottom: 10px; }
+        h2 { color: #6e8efb; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #6e8efb;
+        }
+
+        .info-item strong {
+            display: block;
+            color: #555;
+            font-size: 0.9em;
+        }
+
+        /* Admin panel */
+        #admin-panel {
+            display: none;
+            background: #eee;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: block;
+            box-sizing: border-box;
+        }
+
+        .save-btn {
+            background: #6e8efb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #888;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="menu-dots" onclick="askPassword()">...</div>
+    <h1>Xush kelibsiz!</h1>
+    <p>Salom Bu mening o'zim haqimdagi saytim</p>
+</header>
+
+<div class="container">
+    <img src="./mening_rasmim.jpg" id="main-img" alt="Profil rasmi" class="profile-img">
+
+    <section>
+        <h2>Men haqimda ma'lumot</h2>
+        <div class="info-grid">
+            <div class="info-item">
+                <strong>Ism va Familiya:</strong>
+                <span id="name-val">Zarifboyev Sulaymon</span>
+            </div>
+            <div class="info-item">
+                <strong>Yoshingiz:</strong>
+                <span id="age-val">13</span> yoshda
+            </div>
+            <div class="info-item">
+                <strong>Tajriba:</strong>
+                <span id="loc-val">1 yil</span>
+            </div>
+            <div class="info-item">
+                <strong>Yo'nalish:</strong>
+                <span id="job-val">Dasturchi</span>
+            </div>
+        </div>
+    </section>
+
+    <div id="admin-panel">
+        <h3>Ma'lumot qo'shish / o'zgartirish</h3>
+        <input type="text" id="in-name" placeholder="Yangi ism...">
+        <input type="number" id="in-age" placeholder="Yangi yosh...">
+        <input type="text" id="in-img" placeholder="Rasm URL manzili...">
+        <input type="text" id="in-bio" placeholder="Qo'shimcha ma'lumot...">
+        <button class="save-btn" onclick="applyChanges()">Saqlash</button>
+    </div>
+
+    <section style="margin-top: 30px;">
+        <h2>Nimalarni bilaman?</h2>
+        <p id="bio-val">
+           Salom mening ismim Sulaymon men xorazm viloyati xonqa tumanidagi
+            IT parkda dasturlash yonalishida o'qiyapman men HTML CSS ni bilaman endi cssni bolib Javascriptga o'tamiz
+            Xozirda meni bitta portfolio dasturim bor. Kelajakda bundan ham katta saytlarni yarataman.
+        </p>
+        <h2>Telefon raqam va Manzil </h2>
+        <ul>
+            <li>
+                Telefon raqam: +998 50 705 11 22
+            </li>
+            <li>
+                Manzil: Xorazm viloyati Xonqa tumani
+            </li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 Barcha huquqlar himoyalangan.
+    </div>
+</div>
+
+<script>
+    function askPassword() {
+        var pw = prompt("Parolni kiriting:");
+        if (pw === "11117550") {
+            document.getElementById('admin-panel').style.display = 'block';
+            alert("To'g'ri! Endi ma'lumotlarni tahrirlashingiz mumkin.");
+        } else if (pw !== null) {
+            alert("Parol noto'g'ri!");
+        }
+    }
+
+    function applyChanges() {
+        var n = document.getElementById('in-name').value;
+        var a = document.getElementById('in-age').value;
+        var i = document.getElementById('in-img').value;
+        var b = document.getElementById('in-bio').value;
+
+        if (n) document.getElementById('name-val').innerText = n;
+        if (a) document.getElementById('age-val').innerText = a;
+        if (i) document.getElementById('main-img').src = i;
+        if (b) document.getElementById('bio-val').innerText = b;
+
+        document.getElementById('admin-panel').style.display = 'none';
+        alert("Ma'lumotlar muvaffaqiyatli yangilandi!");
+    }
+</script>
+
+</body>
+</html>

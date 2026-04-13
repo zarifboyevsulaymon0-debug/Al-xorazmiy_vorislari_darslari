@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Bosh sahifa belgisi (1 ball) -->
+    <div class="home-icon"></div>
+
+    <!-- Navigatsiya paneli (4 variant, hover effekti) (3 ball) -->
+    <nav>
+        <h1 class="sss">🏠 Sulaymon</h1>
+        <ul>
+            
+            <li><a href="#about">Haqida</a></li>
+            <li><a href="#projects">Loyiha tafsilotlari</a></li>
+            <li><a href="#skills">Ko'nikmalar</a></li>
+            <li><a href="#reviews">Tavsiyalar</a></li>
+        </ul>
+    </nav>
+
+    <!-- Men haqimda bo‘limi (3 ball) -->
+    <section id="about" class="section">
+        <img src="C:\Users\Acer\Desktop\Vorislar_IT darslari\div_span2.html\photo_2025-11-24_16-30-46.jpg" class="profile">
+        <h2>Zarifboyev Sulaymon</h2>
+        <p>Men Frontend yo‘nalishidagi o‘quvchiman. Quyida mening loyihalarim, ko‘nikmalarim va boshqalarning tavsiyalari bilan tanishishingiz mumkin.</p>
+    </section>
+
+    <!-- Ko'nikmalar (logo + matn) (3 ball) -->
+    <section id="skills" class="section">
+        <h2>Ko'nikmalar</h2>
+        <div class="skills-box">
+            <div class="skill">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968267.png">
+                <span>HTML</span>
+            </div>
+            <div class="skill">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968242.png">
+                <span>CSS</span>
+            </div>
+            <div class="skill">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png">
+                <span>JavaScript</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyiha namunalar (boshqa formatda) (2 ball) -->
+    <section id="projects" class="section">
+        <h2>Loyihalarim</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>🎨 Portfolio Design</h3>
+                <p>Responsive portfolio sahifa dizayni.</p>
+            </div>
+            <div class="project">
+                <h3>📊 Dashboard UI</h3>
+                <p>Statistik ma'lumotlar uchun interaktiv dashboard.</p>
+            </div>
+            <div class="project">
+                <h3>🛒 Mini Shop</h3>
+                <p>Kichik onlayn-do‘kon funktsional prototipi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tavsiyalar (o‘zgacha formatda) (2 ball) -->
+    <section id="reviews" class="section">
+        <h2>Tavsiyalar</h2>
+
+        <ul id="review-list">
+            <li>“Ajoyib ish qiladi va vazifalarni o‘z vaqtida topshiradi.” — Mentor</li>
+            <li>“Jamoada ishlash ko‘nikmasi kuchli.” — Hamkasb</li>
+            <li>“Frontend logikasini yaxshi tushunadi.” — Ustoz</li>
+        </ul>
+
+        <!-- Yangi tavsiya qo‘shish (1 ball) -->
+        <input type="text" id="review-input" placeholder="Yangi tavsiya yozing...">
+        <button onclick="addReview()">Qo'shish</button>
+    </section>
+
+    <!-- Pop-up xabar (2 ball) -->
+    <div id="popup" class="popup">Tavsiya muvaffaqiyatli qo‘shildi!</div>
+
+    <script>
+        function addReview() {
+    let input = document.getElementById("review-input");
+    let text = input.value.trim();
+
+    if (text === "") return;
+
+    let li = document.createElement("li");
+    li.textContent = text;
+    document.getElementById("review-list").appendChild(li);
+
+    input.value = "";
+
+    // pop-up ko‘rsatish
+    let popup = document.getElementById("popup");
+    popup.classList.add("show");
+
+    setTimeout(() => {
+        popup.classList.remove("show");
+    }, 2000);
+}
+
+    </script>
+
+</body>
+
+</html>

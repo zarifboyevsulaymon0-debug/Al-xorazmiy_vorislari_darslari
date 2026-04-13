@@ -1,0 +1,140 @@
+import React from "react";
+
+// Single-file React portfolio component using Tailwind CSS
+// Default export: Portfolio
+// Customize: replace text, add your projects, change links, add images
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Creative Game Landing",
+      description: "An interactive landing page for an indie game — animated hero, trailer embed, and buy CTA.",
+      tags: ["React", "Tailwind", "Animation"],
+      link: "#",
+    },
+    {
+      title: "2D Platformer Demo",
+      description: "Playable browser demo built with canvas and custom physics.",
+      tags: ["JavaScript", "Canvas"],
+      link: "#",
+    },
+    {
+      title: "Tooling Dashboard",
+      description: "Admin dashboard for tracking player metrics and A/B tests.",
+      tags: ["React", "D3", "API"],
+      link: "#",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 antialiased">
+      <header className="max-w-5xl mx-auto p-6 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-lg flex items-center justify-center text-white font-bold">
+            S
+          </div>
+          <div>
+            <h1 className="text-xl font-semibold">Sizning Ismingiz</h1>
+            <p className="text-sm text-gray-500">Game Developer • Frontend Engineer • Designer</p>
+          </div>
+        </div>
+        <nav className="hidden md:flex gap-6 text-sm">
+          <a href="#about" className="hover:text-indigo-600">About</a>
+          <a href="#projects" className="hover:text-indigo-600">Projects</a>
+          <a href="#contact" className="hover:text-indigo-600">Contact</a>
+          <a href="#" className="bg-indigo-600 text-white px-4 py-2 rounded-md shadow-sm">Resume</a>
+        </nav>
+      </header>
+
+      <main className="max-w-5xl mx-auto p-6">
+        {/* Hero */}
+        <section className="grid md:grid-cols-2 gap-8 items-center py-12">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">I build playful, polished web experiences for games and interactive stories.</h2>
+            <p className="mt-4 text-gray-600">I specialize in frontend engineering, animation, and prototyping. I love turning ideas into tight, delightful interactions.</p>
+            <div className="mt-6 flex gap-3">
+              <a href="#projects" className="px-5 py-3 bg-indigo-600 text-white rounded-md shadow">See my work</a>
+              <a href="#contact" className="px-5 py-3 border rounded-md">Contact me</a>
+            </div>
+            <div className="mt-8 text-sm text-gray-500">Based in: Uzbekistan • Available for remote projects</div>
+          </div>
+
+          <div className="relative">
+            <div className="w-full aspect-[4/3] rounded-xl bg-gradient-to-br from-indigo-100 to-pink-50 border border-gray-100 shadow-md flex items-center justify-center">
+              <svg width="220" height="140" viewBox="0 0 220 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="4" y="4" width="212" height="132" rx="12" stroke="#E9E9F0" strokeWidth="2" fill="white" />
+                <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fill="#A3A3C2" fontSize="12">Project screenshot / GIF</text>
+              </svg>
+            </div>
+            <div className="absolute -bottom-4 -left-6 px-3 py-2 bg-white border rounded-md shadow-sm text-xs">Prototype • Playable</div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section id="about" className="mt-12 bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="text-2xl font-semibold">About me</h3>
+          <p className="mt-3 text-gray-600">Hello — I'm a developer who loves games and clean, maintainable frontend code. I focus on performance, accessibility, and delightful micro-interactions. My toolset: React, TypeScript, Tailwind, Canvas, WebAudio, and small backend services.</p>
+
+          <div className="mt-6 grid md:grid-cols-3 gap-4">
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Experience</h4>
+              <p className="text-sm text-gray-500 mt-1">3+ years building interactive web apps and game prototypes.</p>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Skills</h4>
+              <p className="text-sm text-gray-500 mt-1">React, JS, Canvas, Tailwind, Animation, DevOps basics</p>
+            </div>
+            <div className="p-4 border rounded-lg">
+              <h4 className="font-semibold">Availability</h4>
+              <p className="text-sm text-gray-500 mt-1">Freelance & contract work — open to remote.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="mt-12">
+          <h3 className="text-2xl font-semibold">Selected projects</h3>
+          <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((p, i) => (
+              <article key={i} className="bg-white border rounded-xl p-4 shadow-sm hover:shadow-md transition">
+                <div className="h-36 rounded-md bg-gradient-to-br from-gray-100 to-white flex items-center justify-center"> 
+                  <span className="text-xs text-gray-400">Screenshot / GIF</span>
+                </div>
+                <h4 className="mt-4 font-semibold">{p.title}</h4>
+                <p className="text-sm text-gray-600 mt-2">{p.description}</p>
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {p.tags.map((t) => (
+                    <span key={t} className="text-xs px-2 py-1 border rounded-full">{t}</span>
+                  ))}
+                </div>
+                <div className="mt-4 flex gap-2">
+                  <a href={p.link} className="text-sm underline">View</a>
+                  <a href="#contact" className="text-sm underline">Ask about this</a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section id="contact" className="mt-12 bg-white rounded-xl p-6 shadow-sm">
+          <h3 className="text-2xl font-semibold">Let's work together</h3>
+          <p className="text-gray-600 mt-2">Send a short message — I'll reply within a day.</p>
+
+          <form className="mt-4 grid md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Your name" className="p-3 border rounded-md" />
+            <input type="email" placeholder="Your email" className="p-3 border rounded-md" />
+            <input type="text" placeholder="Subject" className="p-3 border rounded-md md:col-span-2" />
+            <textarea placeholder="Message" className="p-3 border rounded-md md:col-span-2 h-32"></textarea>
+            <div className="md:col-span-2 flex items-center justify-between">
+              <button type="submit" className="px-5 py-3 bg-indigo-600 text-white rounded-md">Send message</button>
+              <a href="mailto:your.email@example.com" className="text-sm underline">Or email: your.email@example.com</a>
+            </div>
+          </form>
+        </section>
+
+        <footer className="mt-12 text-center text-sm text-gray-500 pb-12">© {new Date().getFullYear()} Sizning Ismingiz — Built with ❤️ • Edit this file to personalize.</footer>
+      </main>
+    </div>
+  );
+}
